@@ -1,0 +1,12 @@
+---
+- name: Test Playbook
+  hosts: test_servers
+
+  tasks:
+   - name: Find Hostname
+     shell: |
+       hostname; hostname -I | awk '{print $1}'
+     register: hostname
+   - name: Print Hostname
+     debug:
+       msg: "{{ ansible_hostname }} - {{ hostname.stdout_lines }}"

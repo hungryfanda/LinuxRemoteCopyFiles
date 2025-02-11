@@ -1,0 +1,15 @@
+---
+- name: Test Playbook
+  hosts: test_servers
+  gather_facts: true
+  gather_subset: min
+  ignore_unreachable: true
+  tasks:
+   - name: Reachable Servers
+     debug:
+       msg: "{{ ansible_hostname }} is Reachable"
+     when: ansible_hostname is defined
+   - name: Unreachable Servers
+     debug:
+       msg: "{{ inventory_hostname }} is Unreachable"
+     when: ansible_hostname is not defined

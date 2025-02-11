@@ -1,0 +1,11 @@
+LinuxRemoteFileCopy
+-------------------
+1. Get Source & Destination Copy Details
+2. Check Source & Destination Connectivity
+3. Check Ineligible Paths and File Permissions
+4. Copy File from Source FilePath to /tmp
+5. SCP File from Source /tmp to Destination /tmp
+6. Delete from Source /tmp
+7. Move File from Destination /tmp to Destination FilePath
+8. Change Permissions and Ownership in Destination
+9. Verify if Files are actually Copied
