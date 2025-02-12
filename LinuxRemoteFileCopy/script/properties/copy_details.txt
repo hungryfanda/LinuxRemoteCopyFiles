@@ -1,2 +1,2 @@
-rockyserver1,/home/test/FileCopyTest/src_file_rocky1.txt,test,test,644,ubuntuserver1,/home/test/FileCopyTest/dest_file_rocky1.txt,test,test,644
-ubuntuserver1,/home/test/FileCopyTest/src_file_ubuntu1.txt,test,test,644,rockyserver1,/home/test/FileCopyTest/dest_file_ubuntu1.txt,test,test,644
+rockyserver1,/home/test/FileCopyTest/src_file_rocky1.txt,ubuntuserver1,/home/test/FileCopyTest/dest_file_rocky1.txt,test,test,644
+ubuntuserver1,/home/test/FileCopyTest/src_file_ubuntu1.txt,rockyserver1,/home/test/FileCopyTest/dest_file_ubuntu1.txt,test,test,644

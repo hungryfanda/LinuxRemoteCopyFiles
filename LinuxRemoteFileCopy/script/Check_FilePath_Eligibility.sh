@@ -4,13 +4,18 @@
 echo "---- Check FilePath Eligibility----"
 #ExcludedPaths/FilePath Availability/Owner-Group/Permissions Check"
 
-#Excluded Paths
-excluded_paths=("/ /bin /usr /opt /root") #Paths where Files are not Eligible to be Copied
+#Inputs - Command Line Arguments
+filepath="$1"
 
-if [[ " ${array[*]} " =~ " ${value} " ]]; then
+#Excluded Paths
+excluded_paths=("/" "/bin" "/usr" "/opt" "/root") #Paths where Files are not Eligible to be Copied
+
+if [[ " ${excluded_paths[*]} " =~ " ${filepath} " ]]; then
     # whatever you want to do when array contains value
+    echo "ExcludedPath"
 fi
 
-if [[ ! " ${array[*]} " =~ " ${value} " ]]; then
+if [[ ! " ${excluded_paths[*]} " =~ " ${filepath} " ]]; then
     # whatever you want to do when array doesn't contain value
+    echo "Not ExcludedPath"
 fi

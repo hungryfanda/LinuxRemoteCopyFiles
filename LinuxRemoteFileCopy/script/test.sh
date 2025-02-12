@@ -26,5 +26,11 @@ declare -a dest_permission_array
 copy_details="$SCRIPT_DIR/properties/copy_details.txt" #Get Source & Destination details for Copy Files
 while read line
 do
-	echo "$line"
+	line_arr=($(echo "$line" | tr ',' ' '))
+	read -r src_server src_filepath dest_server dest_filepath dest_owner dest_group dest_permissions <<< $(echo "$line" | tr ',' ' ')
+	if [ "$src_server" -eq "$dest_server" ];then
+		echo "Same Server File Copy"
+	elif [[ "$src_server" -ne "$dest_server" ]]; then
+		echo "Different Server File Copy"
+	fi
 done < "$copy_details"
