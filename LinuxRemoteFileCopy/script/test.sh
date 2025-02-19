@@ -26,6 +26,10 @@ declare -a src_permission_array
 declare -a dest_permission_array
 declare -a sno_array
 
+#Initialize Source & Destination FileCheck Inventory
+echo "[src_check_servers]" > "$src_check_inventory"
+echo "[dest_check_servers]" > "$dest_check_inventory"
+
 #Properties File
 copy_details="$SCRIPT_DIR/properties/copy_details.txt" #Get Source & Destination details for Copy Files
 src_check_inventory="$ansible_dir/inventory/src_check/src_check_${timestamp}"
