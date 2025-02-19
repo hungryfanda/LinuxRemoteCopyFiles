@@ -5,7 +5,14 @@ echo "---- Check FilePath Eligibility----"
 #ExcludedPaths/FilePath Availability/Owner-Group/Permissions Check"
 
 #Inputs - Command Line Arguments
-filepath="$1"
+input="$1"
+server_type=$(echo "$input" | cut -d ':' -f1)
+filepath=$(echo "$input" | cut -d ':' -f2)
+if [[ "$server_type" == "DEST" ]]; then
+    owner=$(echo "$input" | cut -d ':' -f3)
+    group=$(echo "$input" | cut -d ':' -f4)
+    permissions=$(echo "$input" | cut -d ':' -f5)
+fi
 
 #Excluded Paths
 excluded_paths=("/" "/bin" "/usr" "/opt" "/root") #Paths where Files are not Eligible to be Copied
@@ -13,8 +20,10 @@ excluded_paths=("/" "/bin" "/usr" "/opt" "/root") #Paths where Files are not Eli
 #Flag Variables
 excludedpath_flag="1"
 filepath_availability_flag="0"
-owner_flag="0"
-group_flag="0"
+if [[ "$server_type" == "DEST" ]]; then
+    owner_flag="0"
+    group_flag="0"
+fi
 
 #Check For Excluded Paths
 if [[ " ${excluded_paths[*]} " =~ " ${filepath} " ]]; then

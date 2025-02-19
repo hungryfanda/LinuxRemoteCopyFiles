@@ -1,0 +1,3 @@
+[src_check_inventory]
+rockyserver1 file_details="SRC:/home/test/FileCopyTest/src_file_rocky1.txt"
+ubuntuserver1 file_details="SRC:/home/test/FileCopyTest/src_file_ubuntu1.txt"
